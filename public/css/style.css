@@ -1,3 +1,7 @@
+/*Overide css*/
+.bg-light{
+	background: #07ee3c!important;
+}
 .margin-top{
     margin-top: 20px;
 }
@@ -5,4 +9,9 @@
     box-shadow: 2px 2px 2px 2px #000;
     height: auto;
     widows: 25%;
+}
+.fotter-bottom{
+	padding: 22px 0px 8px 0px;
+	margin-top: 20px;
+	background: #07ee3c;
 }
