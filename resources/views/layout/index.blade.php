@@ -1,6 +1,8 @@
 @extends('master.master_header')
 
 @section('content')
+<div class="container margin-top">
+<div class="row">
 @include('master.partial.nav')
 <div class="col-8">
                     <!--                    <div class="tab-content" id="nav-tabContent">
@@ -88,7 +90,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!--END Side bar section-->
 
 @endsection
