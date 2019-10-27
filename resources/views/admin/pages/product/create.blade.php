@@ -9,7 +9,7 @@
       Add Products
     </div>
     <div class="card-body">
-      <form method="post" action="{{ route('admin.product.store') }}">
+      <form method="post" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
           <label for="exampleInputEmail1">Title</label>
@@ -29,6 +29,11 @@
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
           <textarea name="pDescription" rows="8" cols="80" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="product_images">Product Image</label>
+          <input type="file" class="form-control" id="exampleInputEmail1" name="pImage">
+          <small id="emailHelp" class="form-text text-muted">Select a product image </small>
         </div>
 
         <button type="submit" class="btn btn-primary">Add Products</button>
