@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use Image;
+use App\ProductImage;
 class AdminPagesController extends Controller
 {
     public function index()
@@ -28,6 +29,38 @@ class AdminPagesController extends Controller
       $product->brand_id = 1;
       $product->admin_id = 1;
       $product->save();
+
+      //ProductImage Model inser Image
+
+      // if($request->hasFile('pImage')){
+      //   // Insert Image
+      //   $image = $request->file('pImage');
+      //   $img = time().'.'. $image->getClientOriginalExtension();
+      //   $location = public_path('images/Products/'.$img);
+      //   Image::make($image)->save($location);
+      //
+      //   $product_image = new ProductImage;
+      //   $product_image->product_id = $product->id;
+      //   $product_image->image = $img;
+      //   $product_image->save();
+      // }
+      if(count($request->pImage) > 0){
+        foreach ($request->pImage as $image) {
+          // Insert Image
+          $image = $request->file('pImage');
+          $img = time().'.'. $image->getClientOriginalExtension();
+          $location = public_path('images/Products/'.$img);
+          Image::make($image)->save($location);
+
+          $product_image = new ProductImage;
+          $product_image->product_id = $product->id;
+          $product_image->image = $img;
+          $product_image->save();
+        }
+      }
+      if(count($request->pImage) > 0){
+
+      }
 
       return redirect()->route('admin.product.create');
     }

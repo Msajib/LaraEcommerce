@@ -19,12 +19,12 @@
         <div class="form-group">
           <label for="exampleInputEmail1">Price</label>
           <input type="text" class="form-control" id="exampleInputEmail1" name="pPrice" aria-describedby="emailHelp" placeholder="product Price ">
-          <small id="emailHelp" class="form-text text-muted">Add Product Title in this input filed</small>
+          <small id="emailHelp" class="form-text text-muted">Add Product Price in this input filed</small>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Quantity</label>
           <input type="number" class="form-control" id="exampleInputEmail1" name="pQuantity" aria-describedby="emailHelp" placeholder="product Quantity">
-          <small id="emailHelp" class="form-text text-muted">Add Product Title in this input filed</small>
+          <small id="emailHelp" class="form-text text-muted">Add Product Quantity in this input filed</small>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
@@ -32,7 +32,27 @@
         </div>
         <div class="form-group">
           <label for="product_images">Product Image</label>
-          <input type="file" class="form-control" id="exampleInputEmail1" name="pImage">
+
+          <div class="row">
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+            <div class="col-md-2">
+                <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
+            </div>
+          </div>
           <small id="emailHelp" class="form-text text-muted">Select a product image </small>
         </div>
 
