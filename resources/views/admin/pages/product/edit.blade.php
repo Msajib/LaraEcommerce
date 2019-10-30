@@ -6,30 +6,27 @@
 <div class="content-wrapper">
   <div class="card">
     <div class="card-header">
-      Add Products
+      Edit Product
     </div>
     <div class="card-body">
-      <form method="post" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
+      <form method="post" action="{{ route('admin.product.update',$product->id) }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         @include('admin.partials.messages')
         <div class="form-group">
           <label for="exampleInputEmail1">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="pTitle" aria-describedby="emailHelp" placeholder="Product Title ">
-          <small id="emailHelp" class="form-text text-muted">Add Product Title in this input filed</small>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="pTitle" aria-describedby="emailHelp" value="{{ $product->title }}">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Price</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" name="pPrice" aria-describedby="emailHelp" placeholder="Product Price ">
-          <small id="emailHelp" class="form-text text-muted">Add Product Price in this input filed</small>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="pPrice" aria-describedby="emailHelp" value="{{ $product->price }}">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Quantity</label>
-          <input type="number" class="form-control" id="exampleInputEmail1" name="pQuantity" aria-describedby="emailHelp" placeholder="Product Quantity">
-          <small id="emailHelp" class="form-text text-muted">Add Product Quantity in this input filed</small>
+          <input type="number" class="form-control" id="exampleInputEmail1" name="pQuantity" aria-describedby="emailHelp" value="{{ $product->quantity }}">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
-          <textarea name="pDescription" rows="8" cols="80" class="form-control"></textarea>
+          <textarea name="pDescription" rows="8" cols="80" class="form-control">{{ $product->Description }}</textarea>
         </div>
         <div class="form-group">
           <label for="product_images">Product Image</label>
@@ -54,10 +51,9 @@
                 <input type="file" class="form-control" id="exampleInputEmail1" name="pImage[]">
             </div>
           </div>
-          <small id="emailHelp" class="form-text text-muted">Select a product image </small>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Products</button>
+        <button type="submit" class="btn btn-primary">Update Products</button>
       </form>
     </div>
   </div>

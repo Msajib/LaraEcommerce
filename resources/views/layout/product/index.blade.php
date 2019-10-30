@@ -17,7 +17,7 @@
                           @foreach ($products as $product)
 
 
-                            <div class="col-md-3 mb-5">
+                            <div class="col-md-4 mb-5">
                                 <div class="card product_list">
                                   @php   $i = 1; @endphp
                                   @foreach ($product->images as $image)

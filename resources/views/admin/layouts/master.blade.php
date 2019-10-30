@@ -23,8 +23,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('images/logo.svg') }}" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('images/logo-mini.svg') }}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="{{ route('admin.index') }}"><img src="{{ asset('images/logo.svg') }}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="{{ route('admin.index') }}"><img src="{{ asset('images/logo-mini.svg') }}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
@@ -175,14 +175,14 @@
               </div>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="index.html"><img class="menu-icon" src="{{ asset("images/menu_icons/01.png") }}" alt="menu icon"><span class="menu-title">Dashboard</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="pages/widgets.html"><img class="menu-icon" src="{{ asset("images/menu_icons/02.png") }}" alt="menu icon"><span class="menu-title">Widgets</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}"><img class="menu-icon" src="{{ asset("images/menu_icons/01.png") }}" alt="menu icon"><span class="menu-title">Dashboard</span></a></li>
+          {{-- <li class="nav-item"><a class="nav-link" href="pages/widgets.html"><img class="menu-icon" src="{{ asset("images/menu_icons/02.png") }}" alt="menu icon"><span class="menu-title">Widgets</span></a></li>
           <li class="nav-item"><a class="nav-link" href="pages/ui-features/buttons.html"><img class="menu-icon" src="{{ asset("images/menu_icons/03.png") }}" alt="menu icon"><span class="menu-title">Buttons</span></a></li>
           <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html"><img class="menu-icon" src="{{ asset("images/menu_icons/04.png") }}" alt="menu icon"><span class="menu-title">Form</span></a></li>
           <li class="nav-item"><a class="nav-link" href="pages/charts/chartjs.html"><img class="menu-icon" src="{{ asset("images/menu_icons/05.png") }}" alt="menu icon"><span class="menu-title">Charts</span></a></li>
           <li class="nav-item"><a class="nav-link" href="pages/tables/basic-table.html"><img class="menu-icon" src="{{ asset("images/menu_icons/06.png") }}" alt="menu icon"><span class="menu-title">Table</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="pages/icons/font-awesome.html"><img class="menu-icon" src="{{ asset("images/menu_icons/07.png") }}" alt="menu icon"> <span class="menu-title">Icons</span></a></li>
-          <li class="nav-item">
+          <li class="nav-item"><a class="nav-link" href="pages/icons/font-awesome.html"><img class="menu-icon" src="{{ asset("images/menu_icons/07.png") }}" alt="menu icon"> <span class="menu-title">Icons</span></a></li> --}}
+          {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages"> <img class="menu-icon" src="{{ asset('images/menu_icons/08.png') }}" alt="menu icon"> <span class="menu-title">General Pages</span><i class="menu-arrow"></i></a>
             <div class="collapse" id="general-pages">
               <ul class="nav flex-column sub-menu">
@@ -193,9 +193,20 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html">500</a></li>
               </ul>
             </div>
+
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#manage_product" aria-expanded="false" aria-controls="general-pages"> <img class="menu-icon" src="{{ asset('images/menu_icons/08.png') }}" alt="menu icon"> <span class="menu-title">Manage Products</span><i class="menu-arrow"></i></a>
+            <div class="collapse" id="manage_product">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.products') }}">Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('admin.product.store') }}">Add Product</a></li>
+              </ul>
+            </div>
+
           </li>
-          <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html"><img class="menu-icon" src="{{ asset('images/menu_icons/09.png') }}" alt="menu icon"> <span class="menu-title">Typography</span></a></li>
-          <li class="nav-item purchase-button"><a class="nav-link" href="https://www.bootstrapdash.com/product/star-admin-pro/" target="_blank">Get full version</a></li>
+          {{-- <li class="nav-item"><a class="nav-link" href="pages/ui-features/typography.html"><img class="menu-icon" src="{{ asset('images/menu_icons/09.png') }}" alt="menu icon"> <span class="menu-title">Typography</span></a></li>
+          <li class="nav-item purchase-button"><a class="nav-link" href="https://www.bootstrapdash.com/product/star-admin-pro/" target="_blank">Get full version</a></li> --}}
         </ul>
       </nav>
       <!-- partial -->

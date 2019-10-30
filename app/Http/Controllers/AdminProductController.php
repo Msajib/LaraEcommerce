@@ -6,27 +6,24 @@ use Illuminate\Http\Request;
 use App\Product;
 use Image;
 use App\ProductImage;
-class AdminPagesController extends Controller
+class AdminProductController extends Controller
 {
     public function index()
-    {
-      return view('admin.pages.index');
-    }
-    public function product_create()
-    {
-      return view('admin.pages.product.create');
-    }
-    public function manage_product()
     {
       $products = Product::orderBy('id','desc')->get();
       return view('admin.pages.product.index')->with('products', $products);
     }
-    public function product_edit($id)
+    public function create()
+    {
+      return view('admin.pages.product.create');
+    }
+
+    public function edit($id)
     {
       $product = Product::find($id);
       return view('admin.pages.product.edit')->with('product', $product);
     }
-    public function product_store(Request $request)
+    public function store(Request $request)
     {
       $request->validate([
         'pTitle' => 'required|max:150',
@@ -82,7 +79,7 @@ class AdminPagesController extends Controller
 
       return redirect()->route('admin.product.create');
     }
-    public function product_update(Request $request,$id)
+    public function update(Request $request,$id)
     {
       $request->validate([
         'pTitle' => 'required|max:150',
@@ -103,5 +100,8 @@ class AdminPagesController extends Controller
 
 
       return redirect()->route('admin.products');
+    }
+    public function delete($id){
+
     }
 }
